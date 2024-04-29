@@ -1,8 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:mmm_project/core/provider/post_provider.dart';
 import 'package:mmm_project/view/home_page.dart';
+import 'package:provider/provider.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(
+    MultiProvider(
+      providers: [
+        ChangeNotifierProvider(
+          create: (context) => PostProvider(),
+        )
+      ],
+      child: const MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
