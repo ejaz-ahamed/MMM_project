@@ -18,6 +18,13 @@ class _DetailsPageState extends State<DetailsPage> {
   }
 
   @override
+  void initState() {
+    super.initState();
+
+    Provider.of<PostDetailsProvider>(context, listen: false).clearComments();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(

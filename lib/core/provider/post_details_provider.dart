@@ -14,6 +14,11 @@ class PostDetailsProvider extends ChangeNotifier {
     return _comments;
   }
 
+  void clearComments() {
+    _comments.clear();
+    notifyListeners();
+  }
+
   Future<void> getPostDetails(int postId) async {
     try {
       final post = await ApiServices.getPostDetails(postId);
