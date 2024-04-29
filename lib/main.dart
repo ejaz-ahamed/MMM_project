@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mmm_project/core/provider/post_details_provider.dart';
 import 'package:mmm_project/core/provider/post_provider.dart';
 import 'package:mmm_project/view/home_page.dart';
 import 'package:provider/provider.dart';
@@ -9,7 +10,10 @@ void main() {
       providers: [
         ChangeNotifierProvider(
           create: (context) => PostProvider(),
-        )
+        ),
+        ChangeNotifierProvider(
+          create: (context) => PostDetailsProvider(),
+        ),
       ],
       child: const MyApp(),
     ),
